@@ -1,0 +1,112 @@
+.about {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 75px 0;
+  color: var(--colorwhite);
+}
+.about .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 50px 0;
+  gap: 20px;
+}
+.about .title h2 {
+  font-size: 50px;
+}
+.about .title span {
+  width: 200px;
+  height: 3px;
+  background: var(--primary);
+}
+.about .imgAbout {
+  display: flex;
+  justify-content: center;
+}
+.about .img img {
+  /* position: sticky;
+  top: 100px; */
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 400px;
+  border: 3px solid var(--primary);
+  border-radius: 20px;
+  color: transparent;
+  padding: 8px;
+  margin-bottom: 25px;
+}
+.about .info h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+}
+.about .info p {
+  color: #717171;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+.about .info .aboutinfo {
+  display: flex;
+  justify-content: stretch;
+  justify-content: space-between;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  max-width: 580px;
+}
+.about .info .aboutinfo .itme {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+.about .info .aboutinfo .itme .icon {
+  font-size: 25px;
+}
+.about .info .aboutinfo .itme .icon-0 {
+  color: var(--primary);
+}
+.about .info .aboutinfo .itme .icon-1 {
+  color: #bd2462;
+}
+.about .info .aboutinfo .itme .icon-2 {
+  color: #55ff7a;
+}
+.about .info .aboutinfo .itme .icon-3 {
+  color: #5591ff;
+}
+.about .info .aboutinfo .itme .icon-4 {
+  color: #14ffde;
+}
+.about .info .aboutinfo .itme h5 {
+  margin: 0;
+  font-size: 15px;
+  color: #737373;
+}
+.about .info .aboutinfo .itme h6 {
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .about .title {
+    display: grid;
+    width: 100%;
+    gap: 0;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .about .title span {
+    width: 210px;
+    height: 3px;
+    background: var(--primary);
+  }
+}
+
+[data-theme="light"] {
+  .about {
+    background-color: var(--colorwhite);
+    min-height: 100vh;
+    padding: 75px 0;
+    color: var(--colorblack);
+  }
+}

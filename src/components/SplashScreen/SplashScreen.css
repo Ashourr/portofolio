@@ -1,0 +1,39 @@
+/* يمكنك تعديل الأنميشن حسب ما تحب */
+
+.SplashScreen{
+  padding: 0 20px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  color: white;
+  z-index: 999999999999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("/imges/page-bg-dark-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.SplashScreen h3{
+  color: var(--primary);
+  font-size: 40px;
+}
+
+
+
+
+
+
+[data-theme="light"] {
+  .SplashScreen {
+    color: black;
+    background-image: url("/imges/page-bg-1 (1).jpg");
+  }
+}

@@ -9,13 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@reduxjs/toolkit": "^2.6.0",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
+    "framer-motion": "^12.23.9",
+    "next": "15.2.0",
+    "next-intl": "^4.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.0"
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.2.0",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.2.0"
   }
 }

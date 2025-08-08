@@ -1,0 +1,67 @@
+.skill {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 75px 0;
+  color: var(--colorwhite);
+}
+.skill .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 50px 0;
+  gap: 20px;
+}
+.skill .title h2 {
+  font-size: 50px;
+}
+.skill .title span {
+  display: flex;
+  width: 200px;
+  height: 3px;
+  background: var(--primary);
+}
+.skill .skill-itme {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 15px;
+  margin-bottom: 20px;
+  border: 2px solid var(--colorwhite);
+  border-radius: 20px;
+  backdrop-filter: contrast(0.9);
+  height: 125px;
+}
+.skill .git{
+  background-color: white !important;
+  border-radius: 50%; 
+}
+@media (max-width: 500px) {
+  .skill .title {
+    display: grid;
+    width: 100%;
+    gap: 0;
+    justify-content: center;
+  }
+  .skill .title span {
+    width: 125px;
+    height: 3px;
+    background: var(--primary);
+  }
+}
+[data-theme="light"] {
+  .skill {
+    background-color: var(--colorwhite);
+    min-height: 100vh;
+    padding: 75px 0;
+    color: var(--colorblack);
+  }
+  .skill .skill-itme {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--colorblack);
+    border-radius: 20px;
+  }
+}

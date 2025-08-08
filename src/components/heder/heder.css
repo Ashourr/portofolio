@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.heder {
+  /* background-color: black; */
+  background-image: url("/imges/page-bg-dark-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--colorwhite);
+}
+.heder .info h2 {
+  font-size: 40px;
+  color: var(--primary);
+  margin: 0;
+}
+.heder .info h2.ar {
+  font-size: 60px;
+  font-family: "Amiri", serif !important;
+}
+.heder .info h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+.heder .info h1.ar {
+  margin-top: -20px;
+  font-size: 95px !important;
+  font-family: "Amiri", serif !important;
+}
+.heder .info h3 {
+  font-size: 40px;
+  color: var(--primary);
+  font-size: 35px;
+  margin: 0;
+}
+.heder .info h3.ar {
+  font-size: 50px;
+  font-family: "Amiri", serif !important;
+  margin-top: 5px;
+}
+.heder .info .icons {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.heder .info .icons .icon {
+  background: var(--colorblack2);
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  padding: 7px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.heder .info .icons .icon.icon-1 {
+  color: rgb(0 111 255);
+}
+.heder .info .icons .icon.icon-2 {
+  color: rgb(163 163 163);
+}
+.heder .info .icons .icon.icon-3 {
+  color: rgb(20, 70, 121);
+}
+.heder .info .icons .icon.icon-4 {
+  color: rgb(0 217 27 / 85%);
+}
+.heder .info .icons .icon:hover {
+  background-color: var(--primary);
+  color: var(--colorwhite);
+}
+.heder .info .link-cv {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.heder .info .link-cv .download {
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--colorwhite);
+  background: var(--primary);
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  font-size: 17px;
+  transition: 0.4s;
+}
+.heder .info .download:hover {
+  background-color: transparent;
+  color: var(--primary);
+}
+@keyframes blobAnimation {
+  0% {
+    border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
+  }
+  33% {
+    border-radius: 53% 47% 65% 35% / 40% 60% 40% 60%;
+  }
+  66% {
+    border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
+  }
+  100% {
+    border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
+  }
+}
+.heder .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heder .img img {
+   /* animation: blobAnimation 5s linear infinite; */
+  border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
+  width: 350px;
+  height: 350px;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+  .heder .info h1 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 991px) {
+  .heder .info h1 {
+    font-size: 35px;
+  }
+  .heder .info h3 {
+    font-size: 25px;
+  }
+  .heder .info h1.ar {
+    font-size: 75px !important;
+  }
+  .heder .info h3.ar {
+    font-size: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .heder .img img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 400px) {
+  .heder .img img {
+    width: 270px;
+    height: 270px;
+  }
+  .heder .info h1 {
+    font-size: 30px;
+  }
+  .heder .info h3 {
+    font-size: 20px;
+  }
+  .heder .info h2 {
+    font-size: 30px;
+  }
+  .heder .info h1.ar {
+    font-size: 55px !important;
+  }
+  .heder .info h3.ar {
+    font-size: 35px;
+  }
+}
+@media (max-width: 325px) {
+  .heder .info h1 {
+    font-size: 25px;
+  }
+  .heder .info h3 {
+    font-size: 18px;
+  }
+  .heder .info h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heder .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  }
+  .heder .info {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .heder .info .link-cv {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+[data-theme="light"] {
+  .heder {
+    background-image: url("/imges/page-bg-1 (1).jpg");
+  }
+  .heder .info h1 {
+    color: var(--colorblack);
+  }
+  .heder .info .icons .icon {
+    background: var(--colorwhite);
+  }
+  .heder .info .icons .icon:hover {
+    background-color: var(--primary);
+    color: var(--colorblack);
+  }
+}

@@ -1,0 +1,131 @@
+.service {
+  background-color: #111;
+  min-height: 100vh;
+  padding: 75px 0;
+  color: var(--colorwhite);
+  background-image: url("/imges/Huawei Honor Magic.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+.service::after {
+  content: "";
+  background: #0000009c;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.service-page{
+  background-color: #111 !important;
+}
+.service-page::after {
+  content: "";
+  background: #111;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.service * {
+  z-index: 9;
+}
+.service .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 50px 0;
+  gap: 20px;
+}
+.service .title h2 {
+  font-size: 50px;
+}
+.service .title span {
+  display: flex;
+  width: 200px;
+  height: 3px;
+  background: var(--primary);
+}
+.service .service-itme {
+  border: 1px solid #777;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  height: 275px;
+  backdrop-filter: blur(10px);
+}
+.service .service-itme .icon {
+  font-size: 80px;
+  margin: 15px 0 25px;
+}
+.service .service-itme .icon-1 {
+  color: #269fff;
+}
+.service .service-itme .icon-2 {
+  color: #00ff14;
+}
+.service .service-itme .icon-3 {
+  color: #dda10c;
+}
+.service .service-itme .icon-4 {
+  color: #fb00ff;
+}
+.service .service-itme .icon-5 {
+  color: aqua;
+}
+.service .service-itme .icon-6 {
+  color: blue;
+}
+.service .service-itme h5 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+.service .service-itme p {
+  color: #717171;
+  font-size: 16px;
+}
+@media (max-width: 500px) {
+  .service .title {
+    display: grid;
+    width: 100%;
+    gap: 0;
+    justify-content: center;
+  }
+  .service .title span {
+    width: 185px;
+    height: 3px;
+    background: var(--primary);
+  }
+}
+
+[data-theme="light"] {
+  .service {
+    background-color: #fff !important;
+    min-height: 100vh;
+    padding: 100px 0;
+    color: var(--colorblack);
+    background-image: url("/imges/16a1eb5d-c6f4-4ae1-8741-dd668bef47df.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+  }
+  .service::after {
+    background: #ffffffe0;
+    background: #ffffffd4;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

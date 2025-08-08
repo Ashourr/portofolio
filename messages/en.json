@@ -1,0 +1,47 @@
+{
+  "LocaleSwitcher": {
+    "english": "En",
+    "arabic": "Ar"
+  },
+
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "service": "Services",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact Us"
+  },
+
+  "header": {
+    "iam": "I am",
+    "name": "Mohammed Ashour",
+    "job": "Front-End Developer",
+    "DownloadCv": "Download Cv",
+    "OppenCv": "Oppen Cv"
+  },
+
+  "about-home": {
+    "title": "About Me",
+    "Who-am": "Who am I?",
+    "PersonalInfo":"Personal Info",
+    "dec": "I`m Mohamed Ashour, a Frontend Developer passionate about creating attractive user interfaces and seamless interactive experiences. I have over a year of experience in HTML, CSS, JavaScript, Bootstrap, React.js, and Next.js. I pay great attention to details to enhance performance and ensure compatibility across different devices. I always strive to apply creativity and modern technologies in my projects to achieve  outstanding results."
+  },
+
+  "service":{
+    "title": "Services",
+    "link": "view all Services"
+  },
+
+
+  "skills": {
+    "title": "SkillS",
+    "link": "view all Skills"
+  },
+
+  "projects": {
+    "title": "Projects",
+    "link": "view all Projects",
+    "live": "Live Demo"
+  }
+}
