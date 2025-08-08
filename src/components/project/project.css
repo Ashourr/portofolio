@@ -1,10 +1,10 @@
 .project {
-  background-color: #1b1b1b ;
+  background-color: #1b1b1b;
   min-height: 100vh;
   padding: 75px 0;
   color: var(--colorwhite);
 }
-.projact-page{
+.projact-page {
   background-color: #111;
 }
 .project .title {
@@ -58,7 +58,7 @@
 }
 .project .project-itme p {
   color: #8c8c8c;
-  padding:  0px 8px;
+  padding: 0px 8px;
   margin: 0;
 }
 .project .project-itme .links {
@@ -100,12 +100,12 @@
   color: black;
   transition: 0.4s;
 }
-.project .project-itme .links .github:hover{
+.project .project-itme .links .github:hover {
   color: var(--primary);
 }
 /* #f3f3f3 */
 /* #d9d9d9 */
- .link{
+.link {
   display: flex;
   margin-top: 10px;
   justify-content: center;
@@ -131,11 +131,11 @@
   transition: 0.3s;
   color: white;
 }
- .link a:hover {
+.link a:hover {
   color: var(--primary);
   border: 1px solid var(--primary);
 }
- .link a:hover .i {
+.link a:hover .i {
   transform: rotate(0deg);
   color: var(--primary);
 }
@@ -147,9 +147,14 @@
     justify-content: center;
   }
   .project .title span {
-    width: 181px;
+    width: 190px;
     height: 3px;
     background: var(--primary);
+  }
+  .project .title h2 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center !important;
   }
 }
 [data-theme="light"] {
@@ -169,7 +174,7 @@
   }
   .project .project-itme p {
     color: #383838;
-    padding:  0px 8px;
+    padding: 0px 8px;
     margin: 0;
   }
   .project .project-itme .links .github {
@@ -185,10 +190,10 @@
     color: var(--colorwhite);
     transition: 0.4s;
   }
-  .project .project-itme .links .github:hover{
+  .project .project-itme .links .github:hover {
     color: var(--primary);
   }
-   .link a {
+  .link a {
     border: 1px solid var(--colorblack);
     text-decoration: none;
     color: var(--colorblack);
@@ -204,20 +209,20 @@
     text-transform: capitalize;
     font-size: 17px;
   }
-   .link .i {
+  .link .i {
     transform: rotate(-45deg);
     transition: 0.3s;
-    color:var(--colorblack);
+    color: var(--colorblack);
   }
-   .link a:hover {
+  .link a:hover {
     color: var(--primary);
     border: 1px solid var(--primary);
   }
-   .link a:hover .i {
+  .link a:hover .i {
     transform: rotate(0deg);
     color: var(--primary);
   }
-  .projact-page{
+  .projact-page {
     background-color: #fff;
   }
   .project .itme-page {

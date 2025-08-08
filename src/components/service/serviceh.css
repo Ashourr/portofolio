@@ -20,7 +20,7 @@
   top: 0;
   left: 0;
 }
-.service-page{
+.service-page {
   background-color: #111 !important;
 }
 .service-page::after {
@@ -99,9 +99,14 @@
     justify-content: center;
   }
   .service .title span {
-    width: 185px;
+    width: 200px;
     height: 3px;
     background: var(--primary);
+  }
+  .service .title h2 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center !important;
   }
 }
 

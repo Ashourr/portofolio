@@ -115,7 +115,7 @@ export default function AboutH() {
                       />
                     </div>
                     <div>
-                      <h5>Name : </h5>
+                      <h5>{locale === "ar" ? "الاسم :" : "Name :"}</h5>
                       <h6>
                         {locale === "ar" ? data[0]?.name_ar : data[0]?.name}
                       </h6>
@@ -135,7 +135,7 @@ export default function AboutH() {
                       />
                     </div>
                     <div>
-                      <h5>Phone : </h5>
+                      <h5>{locale === "ar" ? "الهاتف :" : "Phone :"}</h5>
                       <h6>{data[0]?.phone}</h6>
                     </div>
                   </motion.div>
@@ -154,7 +154,7 @@ export default function AboutH() {
                       />
                     </div>
                     <div>
-                      <h5>Location : </h5>
+                      <h5>{locale === "ar" ? "الموقع :" : "Location :"}</h5>
                       <h6>{data[0]?.location}</h6>
                     </div>
                   </motion.div>
@@ -180,7 +180,9 @@ export default function AboutH() {
                       />
                     </div>
                     <div>
-                      <h5>Email : </h5>
+                      <h5>
+                        {locale === "ar" ? "البريد الالكتروني :" : "Email :"}
+                      </h5>
                       <h6>{data[0]?.email}</h6>
                     </div>
                   </motion.div>
@@ -198,7 +200,9 @@ export default function AboutH() {
                       />
                     </div>
                     <div>
-                      <h5>Birthday : </h5>
+                      <h5>
+                        {locale === "ar" ? "تاريخ الميلاد :" : "Birthday :"}
+                      </h5>
                       <h6>{data[0]?.birthday}</h6>
                     </div>
                   </motion.div>
@@ -216,7 +220,7 @@ export default function AboutH() {
                       />
                     </div>
                     <div>
-                      <h5>Education : </h5>
+                      <h5>{locale === "ar" ? "التعليم :" : "Education :"} </h5>
                       <h6>{data[0]?.education}</h6>
                     </div>
                   </motion.div>

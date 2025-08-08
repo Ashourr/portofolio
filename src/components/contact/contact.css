@@ -32,7 +32,7 @@
   gap: 20px;
   border-radius: 16px;
   direction: ltr !important;
-    text-align: justify !important;
+  text-align: justify !important;
 }
 .contact .info-itme h6 {
   color: #a6a6a6;
@@ -62,7 +62,7 @@ form input {
 form input:focus {
   border-bottom: 2px solid green;
 }
-form input:invalid{
+form input:invalid {
   border-bottom: 2px solid var(--primary);
 }
 form input::placeholder {
@@ -86,7 +86,7 @@ form textarea {
 form textarea:focus {
   border-bottom: 2px solid green;
 }
-form textarea:invalid{
+form textarea:invalid {
   border-bottom: 2px solid var(--primary);
 }
 form textarea::placeholder {
@@ -119,9 +119,14 @@ form .button button:hover {
     justify-content: center;
   }
   .contact .title span {
-    width: 225px;
+    width: 250px;
     height: 3px;
     background: var(--primary);
+  }
+  .contact .title h2 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center !important;
   }
 }
 
@@ -168,7 +173,7 @@ form .button button:hover {
   form input:focus {
     border-bottom: 3px solid green;
   }
-  form input:invalid{
+  form input:invalid {
     border-bottom: 3px solid var(--primary);
   }
 
@@ -188,7 +193,7 @@ form .button button:hover {
   form textarea:focus {
     border-bottom: 3px solid green;
   }
-  form textarea:invalid{
+  form textarea:invalid {
     border-bottom: 3px solid var(--primary);
   }
   form .button button {

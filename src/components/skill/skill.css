@@ -31,9 +31,9 @@
   backdrop-filter: contrast(0.9);
   height: 125px;
 }
-.skill .git{
+.skill .git {
   background-color: white !important;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 @media (max-width: 500px) {
   .skill .title {
@@ -43,9 +43,14 @@
     justify-content: center;
   }
   .skill .title span {
-    width: 125px;
+    width: 160px;
     height: 3px;
     background: var(--primary);
+  }
+  .skill .title h2 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center !important;
   }
 }
 [data-theme="light"] {

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Loading from "@/app/[locale]/loading";
 export default function ServicesPage(props) {
   const locale = useLocale();
-  const t = useTranslations("skills");
+  const t = useTranslations("service");
 
   let [data, setdata] = useState([]);
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ServicesPage(props) {
           viewport={{ once: true }}
           className="title"
         >
-          <h2>services</h2>
+          <h2>{t("title")}</h2>
           <span></span>
         </motion.div>
         <div className="row">
