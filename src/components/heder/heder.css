@@ -8,8 +8,13 @@
   background-size: cover;
   min-height: 100vh;
   display: flex;
+  /* position: relative; */
   align-items: center;
   color: var(--colorwhite);
+}
+.heder .info {
+  z-index: 10;
+  position: absolute;
 }
 .heder .info h2 {
   font-size: 40px;
@@ -118,15 +123,12 @@
   align-items: center;
 }
 .heder .img img {
-   /* animation: blobAnimation 5s linear infinite; */
+  /* animation: blobAnimation 5s linear infinite; */
   border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
   width: 350px;
   height: 350px;
+  z-index: 10 !important;
 }
-
-
-
-
 
 @media (max-width: 1200px) {
   .heder .info h1 {

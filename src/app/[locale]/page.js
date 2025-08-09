@@ -8,12 +8,11 @@ import Skill from "@/components/skill/Skill";
 import Project from "@/components/project/Project";
 import Contact from "@/components/contact/Contact";
 import SplashScreen from "@/components/SplashScreen/SplashScreen";
-import Loading from "./loading";
+// import ParticlesBackground from "@/components/Particles/ParticlesBackground";
 
 export default function Home() {
   return (
     <>
-      {/* <Loading /> */}
       <SplashScreen />
       <Heder />
       <AboutH />

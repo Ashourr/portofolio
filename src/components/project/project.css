@@ -2,6 +2,8 @@
   background-color: #1b1b1b;
   min-height: 100vh;
   padding: 75px 0;
+  position: relative;
+  z-index: 10;
   color: var(--colorwhite);
 }
 .projact-page {

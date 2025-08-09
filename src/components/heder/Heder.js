@@ -14,6 +14,7 @@ import {
 import { faDownload, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import Loading from "@/app/[locale]/loading";
+import ParticlesBackground from "../Particles/ParticlesBackground";
 export default function Heder() {
   const locale = useLocale();
   const t = useTranslations("header");
@@ -125,7 +126,7 @@ export default function Heder() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: 3.3}}
+              transition={{ duration: 0.6, ease: "linear", delay: 3.3 }}
               viewport={{ once: true }}
               className="img"
             >
@@ -140,6 +141,7 @@ export default function Heder() {
           </div>
         </div>
       </div>
+      <ParticlesBackground />
     </main>
   );
 }
