@@ -65,11 +65,15 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <div className={`nav-bar fixed-top w-100 ${scrolled && "backriund"}`}>
+    <div className={`nav-bar w-100 ${scrolled && "backriund"}`}>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" ,delay: pathname === "/" ? 2.5 : ""}}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+          delay: pathname === "/" ? 2.5 : "",
+        }}
         viewport={{ once: true }}
         className="container pe-3 ps-3 p-lg-0"
       >

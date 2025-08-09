@@ -24,8 +24,6 @@
   justify-content: center;
 }
 .about .img img {
-  /* position: sticky;
-  top: 100px; */
   width: 100%;
   max-width: 600px;
   height: 100%;
@@ -104,6 +102,9 @@
     font-size: 50px;
     display: flex;
     justify-content: center !important;
+  }
+  .about .info h2 {
+    margin-top: 25px;
   }
 }
 

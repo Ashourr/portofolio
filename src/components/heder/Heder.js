@@ -56,7 +56,7 @@ export default function Heder() {
                 viewport={{ once: true }}
                 className={`${locale}`}
               >
-                {t("job")}
+                {locale === "en" ? data[0]?.job : data[0]?.job_ar}
               </motion.h3>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
