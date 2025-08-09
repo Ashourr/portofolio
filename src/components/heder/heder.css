@@ -14,7 +14,7 @@
 }
 .heder .info {
   z-index: 10;
-  position: absolute;
+  position: relative;
 }
 .heder .info h2 {
   font-size: 40px;
