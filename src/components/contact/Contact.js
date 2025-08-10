@@ -25,7 +25,7 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
+          transition={{ duration: 0.6, ease: "linear" }}
           viewport={{ once: true }}
           className="title"
         >
@@ -37,7 +37,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
+              transition={{ duration: 0.6, ease: "linear", delay: 0.2}}
               viewport={{ once: true }}
             >
               <div className="info-itme">
@@ -87,7 +87,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
+            transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
             viewport={{ once: true }}
             className="col-12 col-lg-8"
           >

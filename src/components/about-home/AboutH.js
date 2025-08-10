@@ -35,7 +35,7 @@ export default function AboutH() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "linear", delay: 0.3 }}
+          transition={{ duration: 0.6, ease: "linear" }}
           viewport={{ once: true }}
           className="title"
         >
@@ -47,7 +47,7 @@ export default function AboutH() {
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
+              transition={{ duration: 0.6, ease: "linear" }}
               viewport={{ once: true }}
               className="img"
             >
@@ -64,7 +64,7 @@ export default function AboutH() {
               <motion.h2
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "linear", delay: 0.7 }}
+                transition={{ duration: 0.6, ease: "linear" }}
                 viewport={{ once: true }}
               >
                 {t("Who-am")}
@@ -72,7 +72,7 @@ export default function AboutH() {
               <motion.p
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "linear", delay: 0.9 }}
+                transition={{ duration: 0.6, ease: "linear" }}
                 viewport={{ once: true }}
               >
                 {locale === "ar"
@@ -82,7 +82,7 @@ export default function AboutH() {
               <motion.h3
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "linear", delay: 1 }}
+                transition={{ duration: 0.6, ease: "linear" }}
                 viewport={{ once: true }}
               >
                 {t("PersonalInfo")}
@@ -90,7 +90,7 @@ export default function AboutH() {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "linear", delay: 1.5 }}
+                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                 viewport={{ once: true }}
                 className="aboutinfo"
               >
@@ -104,7 +104,7 @@ export default function AboutH() {
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "linear", delay: 1.1 }}
+                    transition={{ duration: 0.6, ease: "linear", delay: 0.3 }}
                     viewport={{ once: true }}
                     className="itme"
                   >
@@ -124,7 +124,7 @@ export default function AboutH() {
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "linear", delay: 1.2 }}
+                    transition={{ duration: 0.6, ease: "linear", delay: 0.4 }}
                     viewport={{ once: true }}
                     className="itme"
                   >
@@ -142,7 +142,7 @@ export default function AboutH() {
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "linear", delay: 1.3 }}
+                    transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
                     viewport={{ once: true }}
                     style={{ marginBottom: "10px" }}
                     className="itme"
@@ -169,7 +169,7 @@ export default function AboutH() {
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "linear", delay: 1.4 }}
+                    transition={{ duration: 0.6, ease: "linear", delay: 0.6 }}
                     viewport={{ once: true }}
                     className="itme"
                   >
@@ -189,7 +189,7 @@ export default function AboutH() {
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "linear", delay: 1.5 }}
+                    transition={{ duration: 0.6, ease: "linear", delay: 0.7 }}
                     viewport={{ once: true }}
                     className="itme"
                   >
@@ -209,7 +209,7 @@ export default function AboutH() {
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "linear", delay: 1.6 }}
+                    transition={{ duration: 0.6, ease: "linear", delay: 0.8 }}
                     viewport={{ once: true }}
                     className="itme"
                   >

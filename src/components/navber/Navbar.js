@@ -48,6 +48,10 @@ export default function Navbar() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [pathname]);
+
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -72,7 +76,7 @@ export default function Navbar() {
         transition={{
           duration: 0.6,
           ease: "easeOut",
-          delay: pathname === "/" ? 2.5 : "",
+          delay: pathname === "/" ? 2 : "",
         }}
         viewport={{ once: true }}
         className="container pe-3 ps-3 p-lg-0"

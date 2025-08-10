@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
+          transition={{ duration: 0.6, ease: "linear" }}
           viewport={{ once: true }}
           className="title"
         >

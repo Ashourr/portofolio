@@ -45,7 +45,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
+            transition={{ duration: 0.6, ease: "linear" }}
             viewport={{ once: true }}
             className="col-12 col-md-6 col-lg-3"
           >
@@ -105,7 +105,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "linear", delay: 0.7 }}
+            transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
             viewport={{ once: true }}
             className="col-12 col-md-6 col-lg-3"
           >
@@ -148,7 +148,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "linear", delay: 0.9 }}
+            transition={{ duration: 0.6, ease: "linear", delay: 0.4 }}
             viewport={{ once: true }}
             className="col-12 col-md-6 col-lg-3"
           >
@@ -173,7 +173,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "linear", delay: 1.1 }}
+            transition={{ duration: 0.6, ease: "linear", delay: 0.6 }}
             viewport={{ once: true }}
             className="col-12 col-md-6 col-lg-3"
           >
@@ -205,7 +205,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "linear", delay: 1.3 }}
+            transition={{ duration: 0.6, ease: "linear", delay: 0.8 }}
             viewport={{ once: true }}
             className="copy-right"
           >

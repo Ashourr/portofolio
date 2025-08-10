@@ -30,35 +30,33 @@ export default function SplashScreen({ children }) {
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           {locale === "ar" ? "مرحبًا بك في موقعي" : "Welcome to My Website"}
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           {locale === "ar" ? "أنا" : "I am"}
         </motion.h2>
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
         >
           {locale === "en" ? data[0]?.name : data[0]?.name_ar}
         </motion.h3>
         <motion.h4
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
         >
           {locale === "en" ? data[0]?.job : data[0]?.job_ar}
         </motion.h4>
       </div>
     );
   }
-
-  // عرض المحتوى العادي بعد انتهاء السبلّاش
   return <>{children}</>;
 }
