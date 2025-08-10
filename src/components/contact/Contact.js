@@ -97,7 +97,10 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-      <ToastContainer position="top-right" />
+      <ToastContainer
+        className="custom-toast"
+        position="top-right"
+      />
     </div>
   );
 }

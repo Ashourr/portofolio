@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 import { toast } from "react-toastify";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 export default function ContactForm() {
   const locale = useLocale();
-  // const t = useTranslations("projects");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,7 +27,7 @@ export default function ContactForm() {
         `${
           locale === "en"
             ? "⚠ Please fill all the fields"
-            : "⚠ يرجى تعبئة جميع الحقول"
+            : "⚠ يرجى تعبئة جميع الحقول"
         }`
       );
       return false;
@@ -48,9 +47,14 @@ export default function ContactForm() {
       );
       return false;
     }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      toast.error(`${locale === "ar" ? "⚠ البريد الألكتروني غير صحيح" : "⚠ Invalid email"}`);
+      toast.error(
+        `${
+          locale === "ar" ? "⚠ البريد الإلكتروني غير صحيح" : "⚠ Invalid email"
+        }`
+      );
       return false;
     }
 
@@ -62,39 +66,67 @@ export default function ContactForm() {
 
     if (!validateForm()) return;
 
+    let emailSent = false;
+    let apiSent = false;
+
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formData,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
+      // إرسال عبر EmailJS
+      try {
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          formData,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        );
+        emailSent = true;
+      } catch (err) {
+        console.error("EmailJS failed:", err);
+      }
 
-      let response = await fetch("https://profile.alsaifgrup.com/api/support", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          description: formData.message,
-        }),
-      });
+      // إرسال عبر API
+      try {
+        let response = await fetch(
+          "https://profile.alsaifgrup.com/api/support",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject,
+              description: formData.message,
+            }),
+          }
+        );
+        if (response.ok) apiSent = true;
+      } catch (err) {
+        console.error("API failed:", err);
+      }
 
-      console.log(response);
-      toast.success(locale === "en" ? "Message sent successfully" : "تم ارسال الرسالة بنجاح", {
-        theme: "colored",
-        position: "top-right",
-      });
-
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      // النتيجة النهائية
+      if (emailSent || apiSent) {
+        toast.success(
+          locale === "en"
+            ? "Message sent successfully"
+            : "تم ارسال الرسالة بنجاح",
+          { theme: "colored", position: "top-right" }
+        );
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast.error(
+          locale === "en"
+            ? "Message failed to send"
+            : "فشل في ارسال الرسالة",
+          { theme: "dark", position: "top-right" }
+        );
+      }
     } catch (error) {
-      toast.error(`${locale === "en" ? "Message failed to send" : "فشل في ارسال الرسالة"}`, {
-        theme: "dark",
-        position: "top-right",
-      });
+      toast.error(
+        locale === "en"
+          ? "Message failed to send"
+          : "فشل في ارسال الرسالة",
+        { theme: "dark", position: "top-right" }
+      );
     }
   };
 

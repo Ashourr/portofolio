@@ -213,3 +213,13 @@ form .button button:hover {
     background-color: var(--primary);
   }
 }
+
+
+
+.custom-toast {
+  z-index: 1010 !important;
+  top: 80px !important; /* المسافة من تحت */
+  max-width: 300px !important;
+  right: 15px !important;
+  margin: auto !important;
+}
