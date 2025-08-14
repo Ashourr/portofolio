@@ -14,7 +14,8 @@ import Aos from "../Aos";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Loading from "@/app/[locale]/loading";
-export default function ProjectsPage() {
+import { toast } from "react-toastify";
+export default function Project() {
   const locale = useLocale();
   const t = useTranslations("projects");
 
@@ -58,18 +59,47 @@ export default function ProjectsPage() {
                   />
                 </div>
                 <h6>{locale === "ar" ? item.name_ar : item.name}</h6>
-                <p>Html, Css, js, bootstrap</p>
+                <p>
+                  {locale === "ar" ? item.description_ar : item.description}
+                </p>
+                <div className="lags">
+                  {item.languages.map((tag, index) => (
+                    <Link key={tag.id || index} href={"#"} className="lag">
+                      {locale === "ar" ? tag.name_ar : tag.name}
+                    </Link>
+                  ))}
+                </div>
                 <div className="links">
-                  <a target="_blank" href="..." className="live-demo">
+                  <a target="_blank" href={item.url} className="live-demo">
                     <FontAwesomeIcon
                       className="icon-live"
                       icon={faLaptopCode}
                     />
                     {t("live")}
                   </a>
-                  <a target="_blank" href={item.url} className="github">
-                    <FontAwesomeIcon icon={faGithub} />
-                  </a>
+                  {item.github_url ? (
+                    <a
+                      target="_blank"
+                      href={item.github_url}
+                      className="github"
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                  ) : (
+                    <span
+                      className="github"
+                      onClick={() =>
+                        toast.error(
+                          locale === "ar"
+                            ? "🔒 الرابط محمي. يرجى التواصل معنا للاطلاع عليه."
+                            : "🔒 Protected link. Please contact us to view it."
+                        )
+                      }
+                      style={{ cursor: "pointer", color: "#888" }}
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>

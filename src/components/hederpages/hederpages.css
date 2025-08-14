@@ -33,17 +33,17 @@
   justify-content: center;
 }
 .heder-about .link a {
-  color: #ff0067;
-  display: flex;
-  justify-content: center;
+  color: #ff0067 !important;
+  display: flex !important;
+  justify-content: center !important;
   align-items: center;
-  gap: 5px;
-  text-decoration: none;
+  gap: 5px !important;
+  text-decoration: none !important;
   font-size: 17px;
   transition: 0.4s;
   cursor: pointer;
-  padding: 0;
-  border: none;
+  padding: 0 !important;
+  border: none !important;
 }
 .heder-about .link .i {
   transform: rotate(-45deg);

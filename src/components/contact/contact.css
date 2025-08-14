@@ -7,7 +7,7 @@
   min-height: 100vh;
   padding: 75px 0;
   position: relative;
-  z-index: 10;
+  z-index: 5;
   color: var(--colorwhite);
 }
 .contact .title {
@@ -217,7 +217,7 @@ form .button button:hover {
 
 
 .custom-toast {
-  z-index: 1010 !important;
+  z-index: 99999999 !important;
   top: 80px !important; /* المسافة من تحت */
   max-width: 300px !important;
   right: 15px !important;

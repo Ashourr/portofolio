@@ -13,7 +13,7 @@
   color: var(--colorwhite);
 }
 .heder .info {
-  z-index: 10;
+  z-index: 2;
   position: relative;
 }
 .heder .info h2 {
@@ -127,7 +127,7 @@
   border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
   width: 350px;
   height: 350px;
-  z-index: 10 !important;
+  z-index: 2 !important;
 }
 
 @media (max-width: 1200px) {

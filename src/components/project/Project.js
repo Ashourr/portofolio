@@ -14,10 +14,13 @@ import Aos from "../Aos";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Loading from "@/app/[locale]/loading";
+import { toast, ToastContainer } from "react-toastify";
+import ProjectModal from "./ProjectModal";
 export default function Project() {
   const locale = useLocale();
   const t = useTranslations("projects");
 
+  const [selectedImages, setSelectedImages] = useState(null);
   let [data, setdata] = useState([]);
   useEffect(() => {
     fetch("https://profile.alsaifgrup.com/api/projects")
@@ -55,21 +58,58 @@ export default function Project() {
                     alt="..."
                     width={1000}
                     height={1000}
+                    onClick={() => {
+                      // لو فيه أكتر من صورة في المشروع
+                      const imgs =
+                        item.images && item.images.length > 0
+                          ? item.images
+                          : [item.cover];
+                      setSelectedImages(imgs);
+                    }}
                   />
                 </div>
                 <h6>{locale === "ar" ? item.name_ar : item.name}</h6>
-                <p>Html, Css, js, bootstrap</p>
+                <p>
+                  {locale === "ar" ? item.description_ar : item.description}
+                </p>
+                <div className="lags">
+                  {item.languages.map((tag, index) => (
+                    <Link key={tag.id || index} href={"#"} className="lag">
+                      {locale === "ar" ? tag.name_ar : tag.name}
+                    </Link>
+                  ))}
+                </div>
                 <div className="links">
-                  <a target="_blank" href="..." className="live-demo">
+                  <a target="_blank" href={item.url} className="live-demo">
                     <FontAwesomeIcon
                       className="icon-live"
                       icon={faLaptopCode}
                     />
                     {t("live")}
                   </a>
-                  <a target="_blank" href={item.url} className="github">
-                    <FontAwesomeIcon icon={faGithub} />
-                  </a>
+                  {item.github_url ? (
+                    <a
+                      target="_blank"
+                      href={item.github_url}
+                      className="github"
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                  ) : (
+                    <span
+                      className="github"
+                      onClick={() =>
+                        toast.error(
+                          locale === "ar"
+                            ? "🔒 الرابط محمي. يرجى التواصل معنا للاطلاع عليه."
+                            : "🔒 Protected link. Please contact us to view it."
+                        )
+                      }
+                      style={{ cursor: "pointer", color: "#888" }}
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -89,6 +129,16 @@ export default function Project() {
         </motion.div>
       </div>
       <Aos />
+      {selectedImages && (
+        <ProjectModal
+          images={selectedImages}
+          onClose={() => setSelectedImages(null)}
+        />
+      )}
+            <ToastContainer
+        className="custom-toast"
+        position="top-center"
+      />
     </div>
   );
 }
