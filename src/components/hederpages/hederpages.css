@@ -21,7 +21,7 @@
   left: 0;
 }
 .heder-about * {
-  z-index: 999;
+  z-index: 9;
 }
 .heder-about h1 {
   font-size: 50px;
