@@ -214,12 +214,33 @@ form .button button:hover {
   }
 }
 
-
-
 .custom-toast {
   z-index: 99999999 !important;
-  top: 80px !important; /* المسافة من تحت */
+  top: 80px !important;
   max-width: 300px !important;
-  right: 15px !important;
+  right: 50px !important;
   margin: auto !important;
+}
+
+.Toastify__toast {
+  /* z-index: 99999999 !important; */
+  /* top: 80px !important; */
+  /* max-width: 300px !important; */
+  right: 15px !important;
+  /* margin: auto !important; */
+}
+@media (max-width: 480px) {
+  .custom-toast {
+    z-index: 99999999 !important;
+    top: 80px !important;
+    max-width: 300px !important;
+    right: 0px !important;
+    margin: auto !important;
+    margin-left: 50px !important;
+  }
+}
+.Toastify__toast-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

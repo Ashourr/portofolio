@@ -264,12 +264,30 @@
     color: var(--colorblack);
   }
   .project .lags .lag {
-  color: var(--colorblack);
-  background: var(--colorwhite2);
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin: 3px;
-  font-size: 15px;
-  border: 1px solid var(--colorblack);
+    color: var(--colorblack);
+    background: var(--colorwhite2);
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 3px;
+    font-size: 15px;
+    border: 1px solid var(--colorblack);
+  }
 }
+
+.custom-toast {
+  z-index: 99999999 !important;
+  top: 80px !important;
+  max-width: 320px !important;
+  right: 15px !important;
+  margin: auto !important;
+}
+@media (max-width: 480px) {
+  .custom-toast {
+    z-index: 99999999 !important;
+    top: 80px !important;
+    max-width: 300px !important;
+    right: 0px !important;
+    margin: auto !important;
+    margin-left:50px  !important;
+  }
 }

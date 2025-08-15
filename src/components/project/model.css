@@ -61,7 +61,6 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  /* direction: ltr !important; */
 }
 .slick-dots.slick-thumb li img {
   width: 10%;
@@ -71,6 +70,4 @@
 
 .slick-dots.slick-thumb li.slick-active img {
   border: 2px solid var(--primary) !important;
-  /* border-radius: 4px; شكل أنعم */
-  /* box-shadow: 0 0 5px rgba(0,/0,0,0.3); ظل بسيط */
 }

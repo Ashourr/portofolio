@@ -128,7 +128,7 @@ export default function Project() {
           onClose={() => setSelectedImages(null)}
         />
       )}
-      <ToastContainer className="custom-toast" style={{top:"80px"}} />
+      <ToastContainer className="custom-toast" />
     </div>
   );
 }
