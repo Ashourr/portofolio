@@ -14,11 +14,13 @@ import Aos from "../Aos";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Loading from "@/app/[locale]/loading";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import ProjectModal from "./ProjectModal";
 export default function Project() {
   const locale = useLocale();
   const t = useTranslations("projects");
 
+  const [selectedImages, setSelectedImages] = useState(null);
   let [data, setdata] = useState([]);
   useEffect(() => {
     fetch("https://profile.alsaifgrup.com/api/projects")
@@ -27,7 +29,7 @@ export default function Project() {
   }, []);
   if (!data) return <Loading />;
   return (
-    <div className="project">
+    <div style={{ zIndex: selectedImages ? 999999 : 2 }} className="project">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -50,12 +52,25 @@ export default function Project() {
               className="col-12 col-md-6 col-lg-4"
             >
               <div className="project-itme">
+                {!item.url_github && (
+                  <span className="api">
+                    {locale === "ar" ? " متصل ب Api" : "Connected with Api"}
+                  </span>
+                )}
                 <div className="img">
                   <Image
-                    src={item.cover}
+                    src={item.cover[0].file_name}
                     alt="..."
                     width={1000}
                     height={1000}
+                    onClick={() => {
+                      const imgs =
+                        // item.cover.length > 1
+                        item.cover.map((img) => img.file_name);
+                      // : [item.cover[0].file_name];
+
+                      setSelectedImages(imgs);
+                    }}
                   />
                 </div>
                 <h6>{locale === "ar" ? item.name_ar : item.name}</h6>
@@ -77,10 +92,10 @@ export default function Project() {
                     />
                     {t("live")}
                   </a>
-                  {item.github_url ? (
+                  {item.url_github ? (
                     <a
                       target="_blank"
-                      href={item.github_url}
+                      href={item.url_github}
                       className="github"
                     >
                       <FontAwesomeIcon icon={faGithub} />
@@ -107,6 +122,13 @@ export default function Project() {
         </div>
       </div>
       <Aos />
+      {selectedImages && (
+        <ProjectModal
+          images={selectedImages}
+          onClose={() => setSelectedImages(null)}
+        />
+      )}
+      <ToastContainer className="custom-toast" />
     </div>
   );
 }

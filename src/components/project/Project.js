@@ -29,7 +29,7 @@ export default function Project() {
   }, []);
   if (!data) return <Loading />;
   return (
-    <div className="project">
+    <div style={{ zIndex: selectedImages ? 999999 : 2 }} className="project">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -52,18 +52,23 @@ export default function Project() {
               className="col-12 col-md-6 col-lg-4"
             >
               <div className="project-itme">
+                {!item.url_github && (
+                  <span className="api">
+                    {locale === "ar" ? " متصل ب Api" : "Connected with Api"}
+                  </span>
+                )}
                 <div className="img">
                   <Image
-                    src={item.cover}
+                    src={item.cover[0].file_name}
                     alt="..."
                     width={1000}
                     height={1000}
                     onClick={() => {
-                      // لو فيه أكتر من صورة في المشروع
                       const imgs =
-                        item.images && item.images.length > 0
-                          ? item.images
-                          : [item.cover];
+                        // item.cover.length > 1
+                        item.cover.map((img) => img.file_name);
+                      // : [item.cover[0].file_name];
+
                       setSelectedImages(imgs);
                     }}
                   />
@@ -87,10 +92,10 @@ export default function Project() {
                     />
                     {t("live")}
                   </a>
-                  {item.github_url ? (
+                  {item.url_github ? (
                     <a
                       target="_blank"
-                      href={item.github_url}
+                      href={item.url_github}
                       className="github"
                     >
                       <FontAwesomeIcon icon={faGithub} />
@@ -135,10 +140,7 @@ export default function Project() {
           onClose={() => setSelectedImages(null)}
         />
       )}
-            <ToastContainer
-        className="custom-toast"
-        position="top-center"
-      />
+      {/* <ToastContainer className="custom-toast" position="top-center" /> */}
     </div>
   );
 }

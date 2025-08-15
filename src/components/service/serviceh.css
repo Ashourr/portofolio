@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 2 !important;
+  /* z-index: 2 !important; */
 }
 .service::after {
   content: "";
