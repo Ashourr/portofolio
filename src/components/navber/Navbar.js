@@ -30,10 +30,10 @@ export default function Navbar() {
   const locale = useLocale();
   const nextLocale = locale === "en" ? "ar" : "en";
   const router = useRouter();
-  const pathname = usePathname(); // to get current page path
+  const pathname = usePathname();
 
   const handleChangeLanguage = () => {
-    router.replace(pathname, { locale: nextLocale }); // this avoids /ar/en/...
+    router.replace(pathname, { locale: nextLocale });
   };
 
   const theme = useSelector((state) => state.theme.theme);
@@ -49,8 +49,8 @@ export default function Navbar() {
   }, [theme]);
 
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, [pathname]);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
 
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -106,7 +106,6 @@ export default function Navbar() {
               />
             </div>
 
-            {/* Navbar toggle button */}
             <button
               className="navbar-toggler"
               type="button"
@@ -130,29 +129,34 @@ export default function Navbar() {
                 <Link
                   href={`/${locale}`}
                   className={`nav-link ${
-                    pathname === `/${locale}` ? "active" : ""
+                    pathname === `/${locale}` || pathname === "/"
+                      ? "active"
+                      : ""
                   }`}
                 >
                   <FontAwesomeIcon className="link-icon" icon={faHouse} />
                   {t("home")}
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  href={`/${locale}/about`}
-                  className={`nav-link ${
-                    pathname === `/${locale}/about` ? "active" : ""
-                  }`}
-                >
-                  <FontAwesomeIcon className="link-icon" icon={faUserTie} />
-                  {t("about")}
-                </Link>
-              </li>
+              <Link
+                href={`/${locale}/about`}
+                className={`nav-link ${
+                  pathname === `/${locale}/about` || pathname === "/about"
+                    ? "active"
+                    : ""
+                }`}
+              >
+                <FontAwesomeIcon className="link-icon" icon={faUserTie} />
+                {t("about")}
+              </Link>
+
               <li className="nav-item">
                 <Link
                   href={`/${locale}/service`}
                   className={`nav-link ${
-                    pathname === `/${locale}/service` ? "active" : ""
+                    pathname === `/${locale}/service` || pathname === "/service"
+                      ? "active"
+                      : ""
                   }`}
                 >
                   <FontAwesomeIcon className="link-icon" icon={faPassport} />
@@ -163,7 +167,9 @@ export default function Navbar() {
                 <Link
                   href={`/${locale}/sklis`}
                   className={`nav-link ${
-                    pathname === `/${locale}/sklis` ? "active" : ""
+                    pathname === `/${locale}/sklis` || pathname === "/sklis"
+                      ? "active"
+                      : ""
                   }`}
                 >
                   <FontAwesomeIcon className="link-icon" icon={faSliders} />
@@ -174,7 +180,9 @@ export default function Navbar() {
                 <Link
                   href={`/${locale}/projact`}
                   className={`nav-link ${
-                    pathname === `/${locale}/projact` ? "active" : ""
+                    pathname === `/${locale}/projact` || pathname === "/projact"
+                      ? "active"
+                      : ""
                   }`}
                 >
                   <FontAwesomeIcon className="link-icon" icon={faBriefcase} />
@@ -185,15 +193,15 @@ export default function Navbar() {
                 <Link
                   href={`/${locale}/contact`}
                   className={`nav-link ${
-                    pathname === `/${locale}/contact` ? "active" : ""
+                    pathname === `/${locale}/contact` || pathname === "/contact"
+                      ? "active"
+                      : ""
                   }`}
                 >
                   <FontAwesomeIcon className="link-icon" icon={faAddressBook} />
                   {t("contact")}
                 </Link>
               </li>
-
-              {/* Extra theme/lang buttons for large screens */}
               <li className="mood" onClick={handleToggleTheme}>
                 <FontAwesomeIcon
                   icon={theme === "light" ? faMoon : faSun}

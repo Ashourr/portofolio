@@ -3,7 +3,6 @@
   min-height: 100vh;
   padding: 75px 0;
   position: relative;
-  /* z-index: 2; */
   color: var(--colorwhite);
 }
 .skill .title {
@@ -24,14 +23,18 @@
 }
 .skill .skill-itme {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 25px 15px;
+  padding: 25px 30px;
   margin-bottom: 20px;
   border: 2px solid var(--colorwhite);
   border-radius: 20px;
   backdrop-filter: contrast(0.9);
   height: 125px;
+}
+.skill .skill-itme h4 {
+  font-size: 20px;
+  text-align: end;
 }
 .skill .git {
   background-color: white !important;
@@ -64,9 +67,9 @@
   }
   .skill .skill-itme {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 25px 15px;
+    padding: 25px 30px;
     margin-bottom: 20px;
     border: 2px solid var(--colorblack);
     border-radius: 20px;

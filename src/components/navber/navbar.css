@@ -243,7 +243,6 @@ nav .lang {
     padding: 5px;
     transition: 0.4s;
     cursor: pointer;
-    /* display: none; */
   }
 }
 @media (max-width: 310px) {
@@ -275,15 +274,10 @@ nav .lang {
     padding: 5px;
     transition: 0.4s;
     cursor: pointer;
-    /* display: none; */
   }
 }
-
-/* @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap'); */
-
 .logo-text {
   font-family: "Amiri", serif !important;
   color: var(--primary);
   margin: 0;
-  /* font-size: 40px; */
 }

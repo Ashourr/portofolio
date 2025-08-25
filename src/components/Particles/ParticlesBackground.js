@@ -12,12 +12,8 @@ export default function ParticlesBackground() {
 
   useEffect(() => {
     setMounted(true);
-
-    // قراءة الثيم أول مرة
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) setTheme(savedTheme);
-
-    // تعديل setItem علشان نسمع أي تغيير للثيم في نفس الصفحة
     const originalSetItem = localStorage.setItem;
     localStorage.setItem = function (key, value) {
       const event = new Event("localstorageChange");
@@ -26,8 +22,6 @@ export default function ParticlesBackground() {
       window.dispatchEvent(event);
       originalSetItem.apply(this, arguments);
     };
-
-    // سماع أي تغيير على localStorage أو الـ Event الجديد
     const handleThemeChange = (e) => {
       if (e.key === "theme" && e.newValue) {
         setTheme(e.newValue);
@@ -35,13 +29,10 @@ export default function ParticlesBackground() {
     };
     window.addEventListener("storage", handleThemeChange);
     window.addEventListener("localstorageChange", handleThemeChange);
-
-    // كشف إذا الجهاز موبايل لتقليل عدد الـ particles
     const mq = window.matchMedia("(pointer: coarse), (max-width: 768px)");
     const handler = () => setIsMobile(mq.matches);
     handler();
     mq.addEventListener("change", handler);
-
     return () => {
       window.removeEventListener("storage", handleThemeChange);
       window.removeEventListener("localstorageChange", handleThemeChange);

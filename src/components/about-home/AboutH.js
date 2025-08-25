@@ -8,7 +8,6 @@ import {
   faEnvelope,
   faLocationDot,
   faMobile,
-  faUser,
   faUserGraduate,
   faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
@@ -20,14 +19,12 @@ import Loading from "@/app/[locale]/loading";
 export default function AboutH() {
   const locale = useLocale();
   const t = useTranslations("about-home");
-
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/about-me")
+    fetch("https://ashar.alsaifgrup.com/api/about-me")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
-
   if (!data) return <Loading />;
   return (
     <section className="about">
@@ -55,7 +52,7 @@ export default function AboutH() {
                 width={1000}
                 height={1000}
                 src={data[0]?.cover || imgAbout}
-                alt="..."
+                alt={locale === "ar" ? "صورة شخصية" : "Personal Image"}
               />
             </motion.div>
           </div>
@@ -69,16 +66,23 @@ export default function AboutH() {
               >
                 {t("Who-am")}
               </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "linear" }}
-                viewport={{ once: true }}
-              >
-                {locale === "ar"
-                  ? data[0]?.description_ar
-                  : data[0]?.description}
-              </motion.p>
+              {locale === "ar" ? (
+                <motion.p
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: "linear" }}
+                  viewport={{ once: true }}
+                  dangerouslySetInnerHTML={{ __html: data[0]?.description_ar }}
+                />
+              ) : (
+                <motion.p
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: "linear" }}
+                  viewport={{ once: true }}
+                  dangerouslySetInnerHTML={{ __html: data[0]?.description }}
+                />
+              )}
               <motion.h3
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -136,7 +140,7 @@ export default function AboutH() {
                     </div>
                     <div>
                       <h5>{locale === "ar" ? "الهاتف :" : "Phone :"}</h5>
-                      <h6>{data[0]?.phone}</h6>
+                      <h6 style={{ direction: "ltr" }}>{data[0]?.phone}</h6>
                     </div>
                   </motion.div>
                   <motion.div
@@ -155,7 +159,9 @@ export default function AboutH() {
                     </div>
                     <div>
                       <h5>{locale === "ar" ? "الموقع :" : "Location :"}</h5>
-                      <h6>{data[0]?.location}</h6>
+                      <h6>
+                        {locale === "ar" ? "مصر - الفيوم" : "Egypt - El-Faiyum"}
+                      </h6>
                     </div>
                   </motion.div>
                 </div>
@@ -221,7 +227,11 @@ export default function AboutH() {
                     </div>
                     <div>
                       <h5>{locale === "ar" ? "التعليم :" : "Education :"} </h5>
-                      <h6>{data[0]?.education}</h6>
+                      <h6>
+                        {locale === "ar"
+                          ? "طالب بالفرقة الرابعة في المعهد التكنولوجي العالي ببني سويف – ( قسم برمجة )."
+                          : "A fourth-year student at the Higher Technological Institute in Beni Suef – ( Programming Department )"}
+                      </h6>
                     </div>
                   </motion.div>
                 </div>

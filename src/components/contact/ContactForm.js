@@ -13,15 +13,12 @@ export default function ContactForm() {
     subject: "",
     message: "",
   });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
   const validateForm = () => {
     const { name, email, subject, message } = formData;
-
     if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
       toast.error(
         `${
@@ -32,7 +29,6 @@ export default function ContactForm() {
       );
       return false;
     }
-
     if (
       name.trim().length < 5 ||
       subject.trim().length < 5 ||
@@ -47,7 +43,6 @@ export default function ContactForm() {
       );
       return false;
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast.error(
@@ -57,18 +52,13 @@ export default function ContactForm() {
       );
       return false;
     }
-
     return true;
   };
-
   const sendEmail = async (e) => {
     e.preventDefault();
-
     if (!validateForm()) return;
-
     let emailSent = false;
     let apiSent = false;
-
     try {
       // إرسال عبر EmailJS
       try {
@@ -82,27 +72,22 @@ export default function ContactForm() {
       } catch (err) {
         console.error("EmailJS failed:", err);
       }
-
       // إرسال عبر API
       try {
-        let response = await fetch(
-          "https://profile.alsaifgrup.com/api/support",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              name: formData.name,
-              email: formData.email,
-              subject: formData.subject,
-              description: formData.message,
-            }),
-          }
-        );
+        let response = await fetch("https://ashar.alsaifgrup.com/api/support", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            description: formData.message,
+          }),
+        });
         if (response.ok) apiSent = true;
       } catch (err) {
         console.error("API failed:", err);
       }
-
       // النتيجة النهائية
       if (emailSent || apiSent) {
         toast.success(
@@ -114,17 +99,13 @@ export default function ContactForm() {
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         toast.error(
-          locale === "en"
-            ? "Message failed to send"
-            : "فشل في ارسال الرسالة",
+          locale === "en" ? "Message failed to send" : "فشل في ارسال الرسالة",
           { theme: "dark", position: "top-right" }
         );
       }
     } catch (error) {
       toast.error(
-        locale === "en"
-          ? "Message failed to send"
-          : "فشل في ارسال الرسالة",
+        locale === "en" ? "Message failed to send" : "فشل في ارسال الرسالة",
         { theme: "dark", position: "top-right" }
       );
     }

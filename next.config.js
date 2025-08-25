@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'profile.alsaifgrup.com',
+        hostname: 'ashar.alsaifgrup.com',
         pathname: '/**', // أو يمكن تخصيصه حسب المسار الصحيح
       },
     ],

@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 .heder {
-  /* background-color: black; */
   background-image: url("/imges/page-bg-dark-2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
   display: flex;
-  /* position: relative; */
   align-items: center;
   color: var(--colorwhite);
-  /* z-index: -2; */
 }
 .heder .info {
   z-index: 1;
@@ -104,33 +101,17 @@
   background-color: transparent;
   color: var(--primary);
 }
-@keyframes blobAnimation {
-  0% {
-    border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
-  }
-  33% {
-    border-radius: 53% 47% 65% 35% / 40% 60% 40% 60%;
-  }
-  66% {
-    border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
-  }
-  100% {
-    border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
-  }
-}
 .heder .img {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .heder .img img {
-  /* animation: blobAnimation 5s linear infinite; */
   border-radius: 39% 61% 47% 53% / 30% 30% 70% 70%;
   width: 350px;
   height: 350px;
   z-index: 1 !important;
 }
-
 @media (max-width: 1200px) {
   .heder .info h1 {
     font-size: 45px;
@@ -188,7 +169,6 @@
     font-size: 25px;
   }
 }
-
 @media (max-width: 767px) {
   .heder .img {
     display: flex;
@@ -212,7 +192,6 @@
     justify-content: center;
   }
 }
-
 [data-theme="light"] {
   .heder {
     background-image: url("/imges/page-bg-1 (1).jpg");

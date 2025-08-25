@@ -14,7 +14,7 @@ export default function Skill() {
 
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/skills")
+    fetch("https://ashar.alsaifgrup.com/api/skills")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
@@ -33,38 +33,42 @@ export default function Skill() {
           <span></span>
         </motion.div>
         <div className="row">
-          {data.slice(0, 6).map((item, index) => (
+          {data.slice(0, 9).map((item, index) => (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: index * 0.2 }}
+              transition={{ duration: 0.6, ease: "linear", delay: index * 0.05 }}
               viewport={{ once: true }}
               key={item.slug || index}
               className="col-12 col-md-6 col-lg-4"
             >
               <div className="skill-itme">
-                <div>
-                  <Image width={70} height={70} src={item.cover} alt="..." />
-                </div>
                 <h4>{locale === "ar" ? item.name_ar : item.name}</h4>
+                <div>
+                  <Image
+                    width={70}
+                    height={70}
+                    src={item.cover}
+                    alt={locale === "ar" ? item.name_ar : item.name}
+                  />
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
-          viewport={{ once: true }}
-          className="link"
-        >
-          <Link href={`/${locale}/sklis`}>
-            {t("link")}
-            <FontAwesomeIcon className="i" icon={faArrowRight} />
-          </Link>
-        </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="link"
+      >
+        <Link href={`/${locale}/sklis`}>
+          {t("link")}
+          <FontAwesomeIcon className="i" icon={faArrowRight} />
+        </Link>
+      </motion.div>
     </div>
   );
 }

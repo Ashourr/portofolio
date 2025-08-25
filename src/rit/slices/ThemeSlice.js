@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-  theme: "dark", // الوضع الافتراضي هو النهاري
+  theme: "dark",
 };
 const themeSlice = createSlice({
   name: 'theme',

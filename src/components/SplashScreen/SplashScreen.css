@@ -1,6 +1,4 @@
-/* يمكنك تعديل الأنميشن حسب ما تحب */
-
-.SplashScreen{
+.SplashScreen {
   padding: 0 20px;
   width: 100%;
   min-height: 100vh;
@@ -21,19 +19,21 @@
   background-size: cover;
 }
 
-.SplashScreen h3{
+.SplashScreen h3 {
   color: var(--primary);
   font-size: 40px;
 }
-
-
-
-
-
-
 [data-theme="light"] {
   .SplashScreen {
     color: black;
     background-image: url("/imges/page-bg-1 (1).jpg");
+  }
+}
+@media (max-width: 450px) {
+  .SplashScreen h1 {
+    font-size: 22px;
+  }
+  .SplashScreen h3 {
+    font-size: 29px;
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 import { Provider } from "react-redux";
-import store from "@/rit/store"; // تأكد من أن المسار صحيح
+import store from "@/rit/store";
 import ThemeInitializer from "./ThemeInitializer";
 const ClientProvider = ({ children }) => {
   return (

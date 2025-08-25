@@ -12,7 +12,6 @@
   padding: 10px;
   direction: ltr !important;
 }
-
 .modal-content {
   position: relative;
   max-width: 600px;
@@ -20,14 +19,11 @@
   background: #fff;
   border-radius: 8px;
   padding: 5px !important;
-  /* overflow: hidden; */
 }
-
 .close-button {
   position: absolute;
   top: 0px;
   right: 15px;
-  /* padding: 0px 12px; */
   font-size: 30px;
   border: none;
   background-color: transparent;
@@ -36,19 +32,7 @@
 }
 .close-button:hover {
   color: var(--primary);
-  /* color: var(--primary); */
 }
-/*
-.slick-dots.slick-thumb {
-  bottom: -60px;
-}
-
-.slick-dots.slick-thumb li {
-  width: 60px;
-  height: 40px;
-}
-*/
-
 .slick-dots {
   position: absolute;
   bottom: -30px;
@@ -67,7 +51,6 @@
   height: 10%;
   object-fit: cover;
 }
-
 .slick-dots.slick-thumb li.slick-active img {
   border: 2px solid var(--primary) !important;
 }

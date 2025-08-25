@@ -1,10 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./contact.css";
-import imgPhone from "../../../public/imges/phone-call.png";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
-import Aos from "@/components/Aos";
 import { ToastContainer } from "react-toastify";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
@@ -13,11 +11,10 @@ export default function Contact() {
   const locale = useLocale();
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/about-me")
+    fetch("https://ashar.alsaifgrup.com/api/about-me")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
-
   if (!data) return <Loading />;
   return (
     <div className="contact">
@@ -37,7 +34,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: 0.2}}
+              transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
               viewport={{ once: true }}
             >
               <div className="info-itme">
@@ -79,7 +76,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h5>{locale === "en" ? "location" : "الموقع"} :</h5>
-                  <h6>{data[0]?.location}</h6>
+                  <h6>
+                    {locale === "ar" ? "مصر - الفيوم" : "Egypt - El-Faiyum"}
+                  </h6>
                 </div>
               </div>
             </motion.div>
@@ -97,10 +96,7 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-      <ToastContainer
-        className="custom-toast"
-        position="top-right"
-      />
+      <ToastContainer className="custom-toast" position="top-right" />
     </div>
   );
 }

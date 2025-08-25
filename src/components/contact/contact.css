@@ -7,7 +7,6 @@
   min-height: 100vh;
   padding: 75px 0;
   position: relative;
-  /* z-index: 1; */
   color: var(--colorwhite);
 }
 .contact .title {
@@ -84,7 +83,6 @@ form textarea {
   font-size: 19px;
   transition: 0.4s;
 }
-
 form textarea:focus {
   border-bottom: 2px solid green;
 }
@@ -112,7 +110,6 @@ form .button button {
 form .button button:hover {
   background-color: var(--primary);
 }
-
 @media (max-width: 500px) {
   .contact .title {
     display: grid;
@@ -131,7 +128,6 @@ form .button button:hover {
     justify-content: center !important;
   }
 }
-
 [data-theme="light"] {
   .contact {
     background-color: white;
@@ -140,7 +136,6 @@ form .button button:hover {
     color: var(--colorblack);
   }
   form {
-    /* border: 2px solid white; */
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -178,7 +173,6 @@ form .button button:hover {
   form input:invalid {
     border-bottom: 3px solid var(--primary);
   }
-
   form textarea {
     display: flex;
     width: 95%;
@@ -213,7 +207,6 @@ form .button button:hover {
     background-color: var(--primary);
   }
 }
-
 .custom-toast {
   z-index: 99999999 !important;
   top: 80px !important;
@@ -221,13 +214,8 @@ form .button button:hover {
   right: 50px !important;
   margin: auto !important;
 }
-
 .Toastify__toast {
-  /* z-index: 99999999 !important; */
-  /* top: 80px !important; */
-  /* max-width: 300px !important; */
   right: 15px !important;
-  /* margin: auto !important; */
 }
 @media (max-width: 480px) {
   .custom-toast {

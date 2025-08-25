@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import "./SplashScreen.css";
 import Loading from "@/app/[locale]/loading";
+import Image from "next/image";
 
 export default function SplashScreen({ children }) {
   const [showSplash, setShowSplash] = useState(true);
@@ -19,7 +20,7 @@ export default function SplashScreen({ children }) {
 
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/main-background")
+    fetch("https://ashar.alsaifgrup.com/api/main-background")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
@@ -27,6 +28,18 @@ export default function SplashScreen({ children }) {
   if (showSplash) {
     return (
       <div className="SplashScreen">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}>
+          <Image
+            width={100}
+            height={100}
+            alt="..."
+            src="/imges/code-svgrepo-com.png"
+            quality={100}
+          />
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,14 +59,14 @@ export default function SplashScreen({ children }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          {locale === "en" ? data[0]?.name : data[0]?.name_ar}
+          {locale === "en" ? "Mohammed Ashour":"محمد عاشور"}
         </motion.h3>
         <motion.h4
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          {locale === "en" ? data[0]?.job : data[0]?.job_ar}
+          {locale === "en" ? "Front-End Web Developer":"مطور واجهات الويب الأمامية"}
         </motion.h4>
       </div>
     );

@@ -11,7 +11,7 @@ export default function ServicesPage(props) {
 
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/services")
+    fetch("https://ashar.alsaifgrup.com/api/services")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
@@ -35,14 +35,24 @@ export default function ServicesPage(props) {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: index * 0.2 }}
+              transition={{
+                duration: 0.6,
+                ease: "linear",
+                delay: index * 0.05,
+              }}
               viewport={{ once: true }}
               key={item.slug || index}
               className="col-12 col-md-6 col-lg-4"
             >
               <div className="service-itme">
                 <div>
-                  <Image width={70} height={70} src={item.cover} alt="..." />
+                  <Image
+                    style={{ marginBottom: "2px" }}
+                    width={120}
+                    height={120}
+                    src={item.cover}
+                    alt={locale === "ar" ? item.name_ar : item.name}
+                  />
                 </div>
                 <div>
                   <h5>{locale === "ar" ? item.name_ar : item.name}</h5>

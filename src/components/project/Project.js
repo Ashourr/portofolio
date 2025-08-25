@@ -23,10 +23,12 @@ export default function Project() {
   const [selectedImages, setSelectedImages] = useState(null);
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/projects")
+    fetch("https://ashar.alsaifgrup.com/api/projects")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
+
+  console.log(data);
   if (!data) return <Loading />;
   return (
     <div style={{ zIndex: selectedImages ? 999999 : 2 }} className="project">
@@ -42,14 +44,14 @@ export default function Project() {
           <span></span>
         </motion.div>
         <div className="row">
-          {data.slice(0, 6).map((item, index) => (
+          {data.slice(0, 4).map((item, index) => (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "linear", delay: index * 0.2 }}
               viewport={{ once: true }}
               key={item.slug}
-              className="col-12 col-md-6 col-lg-4"
+              className="col-12 col-md-6 col-lg-6"
             >
               <div className="project-itme">
                 {!item.url_github && (
@@ -59,30 +61,28 @@ export default function Project() {
                 )}
                 <div className="img">
                   <Image
-                    src={item.cover[0].file_name}
+                    src={item.cover[0]?.file_name}
                     alt="..."
                     width={1000}
                     height={1000}
                     onClick={() => {
-                      const imgs =
-                        // item.cover.length > 1
-                        item.cover.map((img) => img.file_name);
-                      // : [item.cover[0].file_name];
-
+                      const imgs = item.cover.map((img) => img.file_name);
                       setSelectedImages(imgs);
                     }}
                   />
                 </div>
                 <h6>{locale === "ar" ? item.name_ar : item.name}</h6>
-                <p>
+                <p style={{ fontSize: "15px" }}>
                   {locale === "ar" ? item.description_ar : item.description}
                 </p>
-                <div className="lags">
-                  {item.languages.map((tag, index) => (
-                    <Link key={tag.id || index} href={"#"} className="lag">
-                      {locale === "ar" ? tag.name_ar : tag.name}
-                    </Link>
-                  ))}
+                <div className="tags-div" style={{ height: "auto" }}>
+                  <div className="lags">
+                    {item.languages.slice(0, 6).map((tag, index) => (
+                      <div key={tag.id || index} className="lag">
+                        {tag.name}
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="links">
                   <a target="_blank" href={item.url} className="live-demo">
@@ -140,7 +140,6 @@ export default function Project() {
           onClose={() => setSelectedImages(null)}
         />
       )}
-      {/* <ToastContainer className="custom-toast" position="top-center" /> */}
     </div>
   );
 }

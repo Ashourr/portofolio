@@ -2,11 +2,15 @@
 import React from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./model.css";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 
 function NextArrow({ onClick }) {
   return (
@@ -52,13 +56,12 @@ export default function ProjectModal({ images = [], onClose }) {
   const locale = useLocale();
   const isArabic = locale === "ar";
 
-  // لو عربي نقلب الصور
   const displayedImages = isArabic ? [...images].reverse() : images;
 
   const sliderSettings = {
-    dots: !isArabic, // نخفي الشريط لو عربي
+    dots: !isArabic,
     infinite: true,
-    rtl: false, // ثابت LTR
+    rtl: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -67,9 +70,12 @@ export default function ProjectModal({ images = [], onClose }) {
     customPaging: !isArabic
       ? (i) => (
           <a>
-            <img
+            <Image
               src={displayedImages[i]}
               alt={`thumb-${i}`}
+              quality={100}
+              width={600}
+              height={350}
               style={{
                 width: "60px",
                 height: "40px",
@@ -95,14 +101,16 @@ export default function ProjectModal({ images = [], onClose }) {
         <Slider {...sliderSettings}>
           {displayedImages.map((img, i) => (
             <div key={i}>
-              <img
+              <Image
                 src={img}
                 alt={`project-${i}`}
+                quality={100}
+                width={600}
+                height={350}
                 style={{
                   width: "100%",
                   maxHeight: "440px",
                   borderRadius: "10px",
-                  
                 }}
               />
             </div>

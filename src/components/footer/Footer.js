@@ -23,18 +23,17 @@ export default function Footer() {
 
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/about-me")
+    fetch("https://ashar.alsaifgrup.com/api/about-me")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
 
   let [data2, setdata2] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/main-background")
+    fetch("https://ashar.alsaifgrup.com/api/main-background")
       .then((res) => res.json())
       .then((data2) => setdata2(data2?.data));
   }, []);
-
 
   if (!data) return <Loading />;
   if (!data2) return <Loading />;
@@ -183,7 +182,7 @@ export default function Footer() {
                 <li>
                   <div className="itme">
                     <FontAwesomeIcon icon={faPhone} />
-                    <h6>{data[0]?.phone}</h6>
+                    <h6 style={{ direction: "ltr" }}>{data[0]?.phone}</h6>
                   </div>
                 </li>
                 <li>
@@ -195,7 +194,9 @@ export default function Footer() {
                 <li>
                   <div className="itme">
                     <FontAwesomeIcon icon={faLocationDot} />
-                    <h6>{data[0]?.location}</h6>
+                    <h6>
+                      {locale === "ar" ? "مصر - الفيوم" : "Egypt - El-Faiyum"}
+                    </h6>
                   </div>
                 </li>
               </ul>

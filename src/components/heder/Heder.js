@@ -21,7 +21,7 @@ export default function Heder() {
 
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/main-background")
+    fetch("https://ashar.alsaifgrup.com/api/main-background")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);

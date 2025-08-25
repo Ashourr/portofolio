@@ -6,10 +6,10 @@ const ThemeInitializer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const defaultTheme = savedTheme || "dark"; // الوضع الافتراضي ليلي
+    const defaultTheme = savedTheme || "dark";
     document.documentElement.setAttribute("data-theme", defaultTheme);
-    dispatch(setTheme(defaultTheme)); // ضبط السمة في Redux
+    dispatch(setTheme(defaultTheme));
   }, [dispatch]);
-  return null; // هذا المكون لا يحتاج إلى إعادة العرض
+  return null;
 };
 export default ThemeInitializer;

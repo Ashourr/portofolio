@@ -4,12 +4,9 @@ import "./project.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowRight,
   faLaptopCode,
-  faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
 import Aos from "../Aos";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
@@ -23,7 +20,7 @@ export default function Project() {
   const [selectedImages, setSelectedImages] = useState(null);
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/projects")
+    fetch("https://ashar.alsaifgrup.com/api/projects")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
@@ -46,7 +43,7 @@ export default function Project() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: index * 0.2 }}
+              transition={{ duration: 0.6, ease: "linear", delay: index * 0.150 }}
               viewport={{ once: true }}
               key={item.slug}
               className="col-12 col-md-6 col-lg-4"
@@ -59,16 +56,12 @@ export default function Project() {
                 )}
                 <div className="img">
                   <Image
-                    src={item.cover[0].file_name}
+                    src={item.cover[0]?.file_name}
                     alt="..."
                     width={1000}
                     height={1000}
                     onClick={() => {
-                      const imgs =
-                        // item.cover.length > 1
-                        item.cover.map((img) => img.file_name);
-                      // : [item.cover[0].file_name];
-
+                      const imgs = item.cover.map((img) => img.file_name);
                       setSelectedImages(imgs);
                     }}
                   />
@@ -77,12 +70,15 @@ export default function Project() {
                 <p>
                   {locale === "ar" ? item.description_ar : item.description}
                 </p>
-                <div className="lags">
-                  {item.languages.map((tag, index) => (
-                    <Link key={tag.id || index} href={"#"} className="lag">
-                      {locale === "ar" ? tag.name_ar : tag.name}
-                    </Link>
-                  ))}
+                <div className="tags-div">
+                  <div className="lags">
+                    {item.languages.slice(0, 5).map((tag, index) => (
+                      <div key={tag.id || index} className="lag">
+                         {/* {locale === "ar" ? tag.name_ar : tag.name} */}
+                        {tag.name}
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="links">
                   <a target="_blank" href={item.url} className="live-demo">

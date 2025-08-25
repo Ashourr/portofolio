@@ -11,7 +11,7 @@ export default function SkillsPage() {
 
   let [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("https://profile.alsaifgrup.com/api/skills")
+    fetch("https://ashar.alsaifgrup.com/api/skills")
       .then((res) => res.json())
       .then((data) => setdata(data?.data));
   }, []);
@@ -34,16 +34,21 @@ export default function SkillsPage() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "linear", delay: index * 0.2 }}
+              transition={{ duration: 0.6, ease: "linear", delay: index * 0.05 }}
               viewport={{ once: true }}
               key={item.slug || index}
               className="col-12 col-md-6 col-lg-4"
             >
               <div className="skill-itme">
-                <div>
-                  <Image width={70} height={70} src={item.cover} alt="..." />
-                </div>
                 <h4>{locale === "ar" ? item.name_ar : item.name}</h4>
+                <div>
+                  <Image
+                    width={70}
+                    height={70}
+                    src={item.cover}
+                    alt={locale === "ar" ? item.name_ar : item.name}
+                  />
+                </div>
               </div>
             </motion.div>
           ))}

@@ -44,6 +44,8 @@
 .project .project-itme .img {
   width: 100%;
   overflow: hidden;
+  padding: 10px;
+  background-color: black;
 }
 .project .project-itme .img img {
   width: 100%;
@@ -52,17 +54,20 @@
   transition: 0.4s;
 }
 .project .project-itme:hover img {
-  transform: scale(1.1);
+  transform: rotate(-5deg) scale(0.9);
 }
 .project .project-itme h6 {
   padding: 10px 8px 0px;
   margin: 0;
-  font-size: 22px;
+  font-size: 25px;
+  margin: 5px 0 10px;
 }
 .project .project-itme p {
   color: #8c8c8c;
   padding: 0px 8px;
-  margin: 0;
+  min-height: 65px;
+  margin: -10px 0 0px 0;
+  font-size: 13px;
 }
 .project .project-itme .links {
   display: flex;
@@ -106,8 +111,6 @@
 .project .project-itme .links .github:hover {
   color: var(--primary);
 }
-/* #f3f3f3 */
-/* #d9d9d9 */
 .link {
   display: flex;
   margin-top: 10px;
@@ -142,10 +145,13 @@
   transform: rotate(0deg);
   color: var(--primary);
 }
-
+.project .tags-div {
+  height: 90px;
+  overflow: hidden;
+}
 .project .lags {
   display: flex;
-  padding: 5px;
+  padding: 7px 4px;
   flex-wrap: wrap;
 }
 .project .lags .lag {
@@ -154,7 +160,7 @@
   padding: 5px 10px;
   border-radius: 10px;
   margin: 3px;
-  font-size: 15px;
+  font-size: 14px;
   border: 1px solid var(--colorwhite);
 }
 .api {
@@ -169,7 +175,6 @@
   font-size: 14px;
   z-index: 100;
 }
-
 @media (max-width: 500px) {
   .project .title {
     display: grid;
@@ -266,20 +271,31 @@
   .project .lags .lag {
     color: var(--colorblack);
     background: var(--colorwhite2);
-    padding: 5px 10px;
     border-radius: 10px;
     margin: 3px;
-    font-size: 15px;
+    font-size: 14px;
     border: 1px solid var(--colorblack);
   }
+  .project .project-itme .img {
+    background-color: white;
+  }
 }
-
 .custom-toast {
   z-index: 99999999 !important;
   top: 80px !important;
   max-width: 320px !important;
   right: 15px !important;
   margin: auto !important;
+}
+@media (max-width: 767px) {
+  .project .project-itme p {
+    min-height: fit-content;
+    margin: -10px 0 10px 0 !important;
+    font-size: 14px;
+  }
+  .project .tags-div {
+    height: auto;
+  }
 }
 @media (max-width: 480px) {
   .custom-toast {
@@ -288,6 +304,6 @@
     max-width: 300px !important;
     right: 0px !important;
     margin: auto !important;
-    margin-left:50px  !important;
+    margin-left: 50px !important;
   }
 }
