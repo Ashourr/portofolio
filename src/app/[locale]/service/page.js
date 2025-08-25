@@ -3,6 +3,9 @@ import React from "react";
 import HederPages from "@/components/hederpages/HederPages"
 import ServicesPage from "@/components/service/ServicesPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+export const metadata = {
+  title: "Portfolio | Services",
+};
 export default function Servicepage() {
   return (
     <>
