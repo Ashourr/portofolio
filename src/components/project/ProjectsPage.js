@@ -60,10 +60,10 @@ export default function Project() {
                     alt="..."
                     width={1000}
                     height={1000}
-                    onClick={() => {
-                      const imgs = item.cover.map((img) => img.file_name);
-                      setSelectedImages(imgs);
-                    }}
+                    // onClick={() => {
+                    //   const imgs = item.cover.map((img) => img.file_name);
+                    //   setSelectedImages(imgs);
+                    // }}
                   />
                 </div>
                 <h6>{locale === "ar" ? item.name_ar : item.name}</h6>

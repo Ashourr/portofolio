@@ -105,7 +105,7 @@ export default function Heder() {
               >
                 <a
                   className="download"
-                  href={locale === "en" ? data[0]?.cv : data[0]?.cv_ar}
+                  href={locale === "en" ? "/cv.pdf" : "السيرة الذاتية.pdf"}
                   download
                 >
                   <FontAwesomeIcon icon={faDownload} />
